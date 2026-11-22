@@ -20,8 +20,8 @@
             <stringProp name="Argument.value">3000</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
-          <elementProp name="USARNAME" elementType="Argument">
-            <stringProp name="Argument.name">USARNAME</stringProp>
+          <elementProp name="USERNAME" elementType="Argument">
+            <stringProp name="Argument.name">USERNAME</stringProp>
             <stringProp name="Argument.value">tiago</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
@@ -71,8 +71,8 @@
                 <boolProp name="HTTPArgument.always_encode">false</boolProp>
                 <stringProp name="Argument.value">&#xd;
 {&#xd;
-  &quot;username&quot;: &quot;tiago&quot;,&#xd;
-  &quot;password&quot;: &quot;123456&quot;&#xd;
+  &quot;username&quot;: &quot;${USERNAME}&quot;,&#xd;
+  &quot;password&quot;: &quot;${PASSWORD}&quot;&#xd;
 }&#xd;
 </stringProp>
                 <stringProp name="Argument.metadata">=</stringProp>
@@ -292,7 +292,7 @@ if (!token || token == &apos;TOKEN_NAO_ENCONTRADO&apos;) {
       <hashTree/>
       <OpenModelThreadGroup guiclass="OpenModelThreadGroupGui" testclass="OpenModelThreadGroup" testname="TG02 - Modelo Aberto">
         <stringProp name="OpenModelThreadGroup.schedule">rate(1/sec) random_arrivals(60 sec) rate(1/sec) pause(30 sec)</stringProp>
-        <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
+        <stringProp name="ThreadGroup.on_sample_error">startnextloop</stringProp>
         <elementProp name="ThreadGroup.main_controller" elementType="OpenModelThreadGroupController"/>
       </OpenModelThreadGroup>
       <hashTree>
@@ -309,8 +309,8 @@ if (!token || token == &apos;TOKEN_NAO_ENCONTRADO&apos;) {
                 <boolProp name="HTTPArgument.always_encode">false</boolProp>
                 <stringProp name="Argument.value">&#xd;
 {&#xd;
-  &quot;username&quot;: &quot;tiago&quot;,&#xd;
-  &quot;password&quot;: &quot;123456&quot;&#xd;
+  &quot;username&quot;: &quot;${USERNAME}&quot;,&#xd;
+  &quot;password&quot;: &quot;${PASSWORD}&quot;&#xd;
 }&#xd;
 </stringProp>
                 <stringProp name="Argument.metadata">=</stringProp>
@@ -367,7 +367,7 @@ if (!token || token == &apos;TOKEN_NAO_ENCONTRADO&apos;) {
           </JSR223Assertion>
           <hashTree/>
         </hashTree>
-        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="02 - POST Pets" enabled="true">
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="02 - POST Pets">
           <stringProp name="HTTPSampler.contentEncoding">UTF-8</stringProp>
           <stringProp name="HTTPSampler.path">/pets</stringProp>
           <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
@@ -418,7 +418,7 @@ if (!token || token == &apos;TOKEN_NAO_ENCONTRADO&apos;) {
           </ResponseAssertion>
           <hashTree/>
         </hashTree>
-        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="03 - GET Pets" enabled="true">
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="03 - GET Pets">
           <stringProp name="HTTPSampler.path">/pets</stringProp>
           <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
           <stringProp name="HTTPSampler.method">GET</stringProp>
